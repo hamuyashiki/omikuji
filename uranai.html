@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- 文字コードを指定 -->
+        <meta charset="UTF-8">
+        <title>Document</title>
+
+    <script>
+        let　FORM = [];
+        parse();
+        
+        function　parse() {
+        　　var　buffer = location.search.substr(1);  // URLパラメーター部分の文字列を取得
+        　　var　pairs = buffer.split("&"); // クエリの区切り記号 (&) で文字列を配列に分割する
+        
+        　　for (var i = 0; i < pairs.length; i++) {
+        　　　　var　pair = pairs[i].split("="); // パラメータ名とパラメータ値に分割する
+               var paramName = decodeURIComponent(pair[0]);
+              var paramValue = decodeURIComponent(pair[1]);
+
+              // パラメータ名をキーとして連想配列に追加する
+              FORM[paramName] = decodeURIComponent(paramValue);
+        　　}
+        return FORM;
+        }
+        </script>
+        <!-- スタイルシートの読み込み -->
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="./script/canvas2d.js"></script>
+        <script src="./script/character.js"></script>
+        <script src="./script/script.js"></script>
+        
+    </head>
+    <body>
+        <h1>うらない</h1>
+        <!-- ID 属性を持つ canvas エレメント -->
+        <canvas id="main_canvas"></canvas>
+        <p id="result"></p>
+        <form action="enquetes.html" method="get">
+        <input type="hidden" name ="year">
+        <button type="submit" class="small-size">戻る</button>    
+    </form> 
+</html>

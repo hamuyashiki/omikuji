@@ -1,0 +1,34 @@
+body {
+  background-color: rgb(206, 206, 194);
+}
+.same-size {
+    width: 120px;
+    height: 50px;
+    font-size: 30px;
+  }
+
+  .big-size {
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+  }
+
+  .button-size {
+    width: 200px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 15px;
+    background-color: deepskyblue;
+  }
+
+  #next-page {
+    width: 120px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 15px;
+    background-color: deepskyblue;
+  }
+
+  #uranai {
+    margin: 20px 100px;
+  }

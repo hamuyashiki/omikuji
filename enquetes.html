@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <script>
+        let　FORM = [];
+        parse();
+        
+        function　parse() {
+        　　var　buffer = location.search.substr(1);  // URLパラメーター部分の文字列を取得
+        　　var　pairs = buffer.split("&"); // クエリの区切り記号 (&) で文字列を配列に分割する
+        
+        　　for (var i = 0; i < pairs.length; i++) {
+        　　　　var　pair = pairs[i].split("="); // パラメータ名とパラメータ値に分割する
+               var paramName = decodeURIComponent(pair[0]);
+              var paramValue = decodeURIComponent(pair[1]);
+
+              // パラメータ名をキーとして連想配列に追加する
+              FORM[paramName] = decodeURIComponent(paramValue);
+        　　}
+        return FORM;
+        }
+        </script>
+        <link rel="stylesheet" href="./css/index.css">
+        
+</head>
+<body>
+    <h1 id="eto"></h1> 
+    <h1>があなたのうらないを手伝います</h1>
+    <img id="etoPic" width="200px" height="200px"> <!-- srcはjsで切り替える-->   
+
+    <a href="index.html">前に戻る</a>
+<br>
+<form action="uranai.html" method="get">
+    <h1>なにについてうらないますか？</h1>
+    <h1>選んでください</h1>
+    <input type="hidden" name ="etoNo">
+    <select name = "item" class="big-size" required>
+        <option value="place">おでかけ先</option>
+        <option value="onigiri">おにぎりの具</option>
+        <option value="sushi">寿司ネタ</option>
+        <option value="study">勉強(教科)</option>
+    </select>
+    <h1>次の画面で落ちてくるアイテムを拾ってください</h1>
+    <button type="submit" class="button-size">うらなう</button>    
+</form> 
+
+    <script src="./script/animalSelect.js"></script>
+    <script src="./script/itemSelect.js"></script>
+    
+    
+</body>
+</html>
